@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴잡기</title>
+    <style>
+     * {
+      margin: 0;
+      padding: 0;
+      color: #333;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     }
+     li {
+      list-style: none;
+     }
+     a {
+      text-decoration: none;
+      color:inherit;
+     }
+     img {
+      display: block;
+     }
+     header {
+      width: 100%;
+      height: 100px;
+      /*background: lightpink;   */
+      /*overflow: hidden; */
+      position: relative;
+      top:0%;
+     }
+     header .top {
+      width: 80%;
+      height:80px;
+     /* background-color: lightgreen;*/
+      margin: 10px auto;
+      /*overflow: hidden;*/
+     }
+     header .top>img {
+      float: left;
+      padding: 10px;
+     }
+     .nav {
+      width: 900px;
+      height: 60px;
+     /* background-color: lightsalmon;*/
+      margin:10px auto;
+     /* margin-top: 20px;*/
+      text-align: center;
+      position: relative;
+      /*border: 1px solid black;*/
+      z-index: 1;
+     }
+     .nav>li {
+      display: inline-block;
+      width: 180px;
+      height: 40px;
+      line-height: 40px;
+      /*border: 1px solid blue;*/
+      text-align: center;
+      margin-top: 10px ;
+     /* background: lightpink;*/
+     }
+     .submenu {
+      width: 180px;
+      height: 160px;
+      background-color: lightsalmon;
+      position: absolute;
+      z-index: 2;
+      display: none;
+     }
+     .submenu>li>a {
+      width: 180px;
+      height: 40px;
+      text-align: left;
+      line-height: 40px;
+     }
+     .submenu>li:hover{
+      background-color: lemonchiffon;
+      color: crimson;
+      font-weight: 900;
+     }
+    </style>
+    <script src="./jquery-3.7.0.min.js"></script>
+    <script>
+     $(function(){
+      $(".nav>li").mouseover(function(){
+       $(this).find(".submenu").stop().slideDown(500);
+      }).mouseout(function(){
+       $(this).find(".submenu").stop().slideUp(500);
+      });
+     });
+    </script>
+</head>
+<body>
+<header>
+ <div class="top">
+   <img src="./logo.PNG" alt="img">
+  <ul class="nav">
+    <li><a href="#">주메뉴1</a>
+     <ul class="submenu">
+      <li><a href="#">서브메뉴1-1</a></li>
+      <li><a href="#">서브메뉴1-2</a></li>
+      <li><a href="#">서브메뉴1-3</a></li>
+      <li><a href="#">서브메뉴1-4</a></li>
+     </ul>
+    </li>
+
+    <li><a href="#">주메뉴2</a>
+     <ul class="submenu">
+      <li><a href="#">서브메뉴2-1</a></li>
+      <li><a href="#">서브메뉴2-2</a></li>
+      <li><a href="#">서브메뉴2-3</a></li>
+      <li><a href="#">서브메뉴2-4</a></li>
+     </ul>
+    </li>
+
+    <li><a href="#">주메뉴3</a>
+     <ul class="submenu">
+      <li><a href="#">서브메뉴3-1</a></li>
+      <li><a href="#">서브메뉴3-2</a></li>
+      <li><a href="#">서브메뉴3-3</a></li>
+      <li><a href="#">서브메뉴3-4</a></li>
+     </ul>
+    </li>
+
+    <li><a href="#">주메뉴4</a>
+     <ul class="submenu">
+      <li><a href="#">서브메뉴4-1</a></li>
+      <li><a href="#">서브메뉴4-2</a></li>
+      <li><a href="#">서브메뉴4-3</a></li>
+      <li><a href="#">서브메뉴4-4</a></li>
+     </ul>
+    </li>
+  </ul>
+ </div>
+</header>    
+</body>
+</html>
